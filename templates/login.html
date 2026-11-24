@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+
+	<div class="container">
+		<h2>Welcome Back!</h2>
+		<p style="color: #8a7a75;">Sign in to manage your boutique store.</p>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<p style="color: red;">{{ messages[0] }}</p>
+			{% endif %}
+		{% endwith %}
+		<form method="POST">
+			<label>Username:</label><br><br>
+			<input type="text" name="username" class="custom_inputs" required><br><br>
+			<label>Password:</label><br><br>
+			<input type="password" name="password" class="custom_inputs" required><br><br>
+			<a href="{{ url_for('login') }}">Forgot password?</a><br><br>
+			<button type="submit"><b>Log In</b></button><br><br>
+			<p>Authorized Personel Only!</p>
+		</form>
+	</div>
+</body>
+</html>
