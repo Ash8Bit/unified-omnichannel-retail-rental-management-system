@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Prototype</title>
+	<style>
+		body {
+			margin: 0;
+			display: flex;
+			background-color: #f8f4ef;
+			font-family: "sans-serif";
+			width: 100vw;
+			height: 100vh;
+		}
+		div.side-container {
+			background-color: #fff;
+			border: 2px solid #ede3d8;
+			width: 30rem;
+			height: calc(100vh - 4px);
+			padding: 0 1.5rem;
+			div {
+				margin-bottom: 5rem;
+				h1 {
+					color: #6d263d;
+					margin: 1ch auto;
+				}
+				p {
+					color: #555;
+					margin: 0;
+				}
+			}
+			ul {
+				list-style: none;
+				padding: 0;
+				li {
+					margin-top: 4rem;
+				}
+				li>a {
+					text-decoration: none;
+					color: #000;
+				}
+			}
+		}
+		div.page-container {
+			width: 100%;
+			max-height: 100%;
+			margin: 0;
+			padding: 1.5rem;
+			div.summary {
+				display: flex;
+				gap: 1rem;
+			}
+		
+			div.panel {
+				max-width: 100%;
+				background-color: #fff;
+				border: 2px solid #ede3d8;
+				border-radius: 12px;
+				padding: 0.25rem 1.25rem;
+				p {
+					color: #555;
+				}
+				p.bold-text {
+					color: #000;
+					margin: 0;
+					font-weight: bold;
+					font-size: 1.75rem;
+				}
+			}
+			div.overview-container, div.inventory-container {
+				margin-top: 1.5rem;
+				max-width: 100%;
+				background-color: #fff;
+				border: 2px solid #ede3d8;
+				border-radius: 12px;
+				padding: 0.25rem 1.25rem;
+			
+				p {
+					color: #555;
+				}
+				div.inventory-container, div.panel {
+					border-radius: 0;
+				}
+			}
+		}
+		button.action {
+			width: 25%;
+			height: 3.5rem;
+			max-width: 350px;
+			background-color: #6d263d;
+			border-radius: 12px;
+			margin-top: 1.25rem;
+
+			padding: 1rem;
+			text-align: left;
+			font-weight: bold;
+			font-size: 1.25rem;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="side-container">
+		<div>
+			<h1>JLo's</h1>
+			<p>BOUTIQUE STORE</p>
+			<p>Management Portal</p>
+		</div>
+		<ul>
+			<li><a href="{{ url_for('dashboard') }}">Overview</a></li>
+			<li><a href="#"><b>Inventory</b></a></li>
+			<li><a href="{{ url_for('rental') }}">Rental</a></li>
+			<li><a href="{{ url_for('orders') }}">Orders</a></li>
+			<li><a href="{{ url_for('customers') }}">Customers</a></li>
+			<li><a href="#">Reports</a></li>
+			<li><a href="#">Settings</a></li>			
+		</ul>
+	</div>
+	<div class="page-container">
+		<h2>Welcome back, {{ username }}!</h2>
+		<p>JLo's Boutique Store / Inventory Management</p>
+		<div class="summary">
+			<div class="panel">
+				<p>METRIC</p>
+				<p class="bold-text">₱128,450.00</p>
+				<p>from last month</p>
+			</div>		
+			<div class="panel">
+				<p>METRIC</p>
+				<p class="bold-text">₱128,450.00</p>
+				<p>from last month</p>
+			</div>
+			<div class="panel">
+				<p>METRIC</p>
+				<p class="bold-text">₱128,450.00</p>
+				<p>from last month</p>
+			</div>
+		</div>
+		<h3>Inventory List</h3>
+		<div class="overview-container">
+			<p>Manage products, stock levels, and categories</p>
+			<div class="inventory-container">
+				<p><b>PRODUCT / CATEGORY / SKU / STOCK / PRICE / STATUS</b></p>
+			</div>
+			<div class="panel">
+				<p><b>SOMETHING</b> something something something something something</p>
+			</div>
+		</div>
+		<button class="action">+ Add Product</button>
+	</div> 
+</body>
+</html>

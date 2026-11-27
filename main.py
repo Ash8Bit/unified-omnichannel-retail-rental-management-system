@@ -64,6 +64,35 @@ def dashboard():
 		return redirect(url_for("login"))
 	return render_template("dashboard.html", username=session.get("user_name"))
 
+# Inventory Management
+@app.route("/inventory")
+def inventory():
+	if "user_id" not in session:
+		return redirect(url_for("login"))
+	return render_template("inventory.html", username=session.get("user_name"))
+
+# Rental Management
+@app.route("/rental")
+def rental():
+	if "user_id" not in session:
+		return redirect(url_for("login"))
+	return render_template("rental.html", username=session.get("user_name"))
+
+# Order Management
+@app.route("/orders")
+def orders():
+	if "user_id" not in session:
+		return redirect(url_for("login"))
+	return render_template("orders.html", username=session.get("user_name"))
+
+# Customer Management
+@app.route("/customers")
+def customers():
+	if "user_id" not in session:
+		return redirect(url_for("login"))
+	return render_template("customers.html", username=session.get("user_name"))
+
+
 # Logout
 @app.route("/logout")
 def logout():
